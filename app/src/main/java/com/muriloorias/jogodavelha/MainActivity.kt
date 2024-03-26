@@ -11,17 +11,17 @@ class MainActivity : AppCompatActivity() {
     var isPlayer1 = true
     var gameEnd = false
 
-    // Botões do topo
+    // Botões do topo\\
     private lateinit var top: ImageView
     private lateinit var topStart: ImageView
     private lateinit var topEnd: ImageView
 
-    // Botões do meio
+    // Botões do meio\\
     private lateinit var center: ImageView
     private lateinit var centerStart: ImageView
     private lateinit var centerEnd: ImageView
 
-    // Botões de baixo
+    // Botões de baixo\\
     private lateinit var bottom: ImageView
     private lateinit var bottomStart: ImageView
     private lateinit var bottomEnd: ImageView
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Achando os botões
+        // Achando os botões\\
         top = findViewById(R.id.top)
         topStart = findViewById(R.id.topStart)
         topEnd = findViewById(R.id.topEnd)
@@ -104,15 +104,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun playerWin(value: Int): Boolean {
-        // Lógica de verificação de vitória
+        // Lógica de verificação de vitória\\
+        //logica vertical\\
         if ( (top.tag == value && center.tag == value && bottom.tag == value)||
             (topStart.tag == value && centerStart.tag == value && bottomStart.tag == value)||
-            (topEnd.tag == value && centerEnd.tag == value && bottomStart.tag == value)||
-            // Lógica horizontal
+            (topEnd.tag == value && centerEnd.tag == value &&  bottomEnd.tag == value)||
+            // Lógica horizontal\\
             (topStart.tag == value && top.tag == value && topEnd.tag == value)||
             (centerStart.tag == value && center.tag == value && centerEnd.tag == value)||
             (bottomStart.tag == value && bottom.tag == value && bottomEnd.tag == value)||
-            // Lógica diagonal
+            // Lógica diagonal\\
             (topStart.tag == value && center.tag == value && bottomEnd.tag == value)||
             (topEnd.tag == value && center.tag == value && bottomStart.tag == value)
         ) {
